@@ -11,7 +11,7 @@ export default function HabitsPage() {
       const req = await fetch("http://localhost:3000/api/v1/habits");
       if (!req.ok) throw new Error("Erreur de chargement des données");
 
-      const datas = await req.json()
+      const datas = await req.json();
       setHabits(datas);
     } catch (error) {
       throw new Error(error);
@@ -28,7 +28,7 @@ export default function HabitsPage() {
 
       <ul>
         {habits?.map((habit) => (
-          <HabitElement key={habit._id} id={habit._id} name={habit.name}/>
+          <HabitElement key={habit._id} id={habit._id} name={habit.name} />
         ))}
       </ul>
     </>
