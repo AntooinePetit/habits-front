@@ -62,6 +62,8 @@ export default function HabitsPage() {
     }
   };
 
+
+
   if (error) return <p style={{ color: "red" }}>{error}</p>;
 
   return (
@@ -76,6 +78,7 @@ export default function HabitsPage() {
             id={habit._id}
             name={habit.name}
             onDelete={() => deleteHabit(habit._id)}
+            setError={setError}
           />
         ))}
       </ul>

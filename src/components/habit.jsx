@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function HabitElement({ id, name, onDelete }) {
+export default function HabitElement({ id, name, onDelete, setError }) {
   // Récupérer toutes les entrées de l'habitude
   const [entries, setEntries] = useState([]);
 
@@ -34,6 +34,17 @@ export default function HabitElement({ id, name, onDelete }) {
     }
   };
 
+  const addEntry = async (id) => {
+    try {
+      const req = await fetch(`http://localhost:3000/api/v1/entries/${id}`, {
+        method: "POST",
+      });
+      if (!req) throw new Error("Erreur de l'enregistrement de l'entrée");
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
   return (
     <>
       <li key={id}>
@@ -41,6 +52,7 @@ export default function HabitElement({ id, name, onDelete }) {
         <span style={{ color: "red" }} onClick={onDelete}>
           Suppression
         </span>
+        - <span style={{ color: "green" }}>Ajouter une entrée</span>
       </li>
       {entries.length > 0 ? (
         <ul>
