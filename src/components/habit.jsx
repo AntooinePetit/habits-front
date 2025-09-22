@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function HabitElement({ id, name }) {
+export default function HabitElement({ id, name, onDelete }) {
   // Récupérer toutes les entrées de l'habitude
   const [entries, setEntries] = useState([]);
 
@@ -28,15 +28,20 @@ export default function HabitElement({ id, name }) {
         method: "DELETE",
       });
       if (!req.ok) throw new Error("Impossible de supprimer l'entrée");
-      setEntries((prev) => prev.filter((entry) => entry._id !== id))
+      setEntries((prev) => prev.filter((entry) => entry._id !== id));
     } catch (error) {
-      throw new Error(error)
+      throw new Error(error);
     }
   };
 
   return (
     <>
-      <li key={id}>{name}</li>
+      <li key={id}>
+        {name} -{" "}
+        <span style={{ color: "red" }} onClick={onDelete}>
+          Suppression
+        </span>
+      </li>
       {entries.length > 0 ? (
         <ul>
           {entries?.map((entry) => {
@@ -47,7 +52,12 @@ export default function HabitElement({ id, name }) {
             return (
               <li key={entry._id}>
                 Realisé le {newdate[0]} à {newdate[1]} -{" "}
-                <span style={{ color: "red" }} onClick={() => deleteEntry(entry._id)}>Supprimer l'entrée</span>
+                <span
+                  style={{ color: "red" }}
+                  onClick={() => deleteEntry(entry._id)}
+                >
+                  Supprimer l'entrée
+                </span>
               </li>
             );
           })}
