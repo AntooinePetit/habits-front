@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import AddHabit from "../components/addHabit";
 import HabitElement from "../components/habit";
+import Today from "./Today";
+import { Link } from "react-router-dom";
 
 export default function HabitsPage() {
+  document.title = "Suivi global";
+
   // Récupérer toutes les habitudes
   const [habits, setHabits] = useState([]);
   const [error, setError] = useState();
@@ -61,13 +65,12 @@ export default function HabitsPage() {
     }
   };
 
-
-
   if (error) return <p style={{ color: "red" }}>{error}</p>;
 
   return (
     <>
       <h1>Gestion d'habitudes</h1>
+      <h2>Suivi global</h2>
       <AddHabit onAdd={addHabit} />
 
       <ul>
@@ -81,6 +84,8 @@ export default function HabitsPage() {
           />
         ))}
       </ul>
+
+      <Link to="/today">Habitude du jour</Link>
     </>
   );
 }
