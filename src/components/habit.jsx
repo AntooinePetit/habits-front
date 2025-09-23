@@ -34,20 +34,6 @@ export default function HabitElement({ id, name, onDelete, setError }) {
     }
   };
 
-  const addEntry = async (id) => {
-    try {
-      const req = await fetch(`http://localhost:3000/api/v1/entries/${id}`, {
-        method: "POST",
-      });
-      if (!req) throw new Error("Erreur de l'enregistrement de l'entrée");
-      const res = await req.json();
-
-      setEntries((prev) => [...prev, res]);
-    } catch (error) {
-      setError(error.message);
-    }
-  };
-
   return (
     <>
       <li key={id}>
@@ -55,7 +41,6 @@ export default function HabitElement({ id, name, onDelete, setError }) {
         <span style={{ color: "red" }} onClick={onDelete}>
           Suppression
         </span>
-        - <span style={{ color: "green" }} onClick={() => addEntry(id)}>Ajouter une entrée</span>
       </li>
       {entries.length > 0 ? (
         <ul>
