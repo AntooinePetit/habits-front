@@ -13,7 +13,7 @@ export default function HabitElement({ id, name, onDelete, setError }) {
       const datas = await req.json();
       setEntries(datas);
     } catch (error) {
-      throw new Error(error);
+      setError(error);
     }
   };
 
@@ -30,7 +30,7 @@ export default function HabitElement({ id, name, onDelete, setError }) {
       if (!req.ok) throw new Error("Impossible de supprimer l'entrée");
       setEntries((prev) => prev.filter((entry) => entry._id !== id));
     } catch (error) {
-      throw new Error(error);
+      setError(error);
     }
   };
 
