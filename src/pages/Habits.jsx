@@ -54,7 +54,6 @@ export default function HabitsPage() {
         throw new Error("Erreur lors de l'enregistrement de l'habitude");
 
       const res = await req.json();
-      console.log(res);
 
       setHabits((prev) => [...prev, res.habit]);
     } catch (error) {
