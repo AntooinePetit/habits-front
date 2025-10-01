@@ -85,6 +85,7 @@ L'application sera disponible sur `http://localhost:5173/`
   - `src/components/todayHabit.jsx` : lignes 9, 27, 41
   - `src/pages/Habits.jsx` : lignes 17, 34, 40, 52
   - `src/pages/Today.jsx` : ligne 20
+- Push le projet avec les liens **Fetch** à jour
 
 ### Déploiement sur Vercel
 
