@@ -32,7 +32,7 @@ front/
 
 - npm
 
-### 1. Cloner le repository 
+### 1. Cloner le repository
 
 ```bash
 git clone --recurse-submodules https://github.com/AntooinePetit/habits
@@ -74,9 +74,25 @@ L'application sera disponible sur `http://localhost:5173/`
 
 ## 🚀 Déploiement
 
+### Faire un fork du projet
+
+- Se rendre sur le [repository](https://github.com/AntooinePetit/habits-front)
+- Cliquer sur "Fork"
+- Nommer le fork
+- Cliquer sur "Create fork"
+- Après [déploiement du back](https://github.com/AntooinePetit/habits-back?tab=readme-ov-file), remplacer `http://localhost:3000` par le lien d'accès à votre back dans les fetch présents ici :
+  - `src/components/habit.jsx` : lignes 10, 27
+  - `src/components/todayHabit.jsx` : lignes 9, 27, 41
+  - `src/pages/Habits.jsx` : lignes 17, 34, 40, 52
+  - `src/pages/Today.jsx` : ligne 20
+
+### Déploiement sur Vercel
+
 - Se rendre sur [Vercel](https://vercel.com/)
 - Créer un compte/Se connecter avec GitHub
 - Cliquer sur "Add New" > "Project"
-- Sélectionner le repository correspondant 
+- Sélectionner le repository correspondant
 - Nommer le projet si besoin
 - Cliquer sur "Deploy"
+- Cliquer sur "Continue to Dashboard"
+- Pour accéder à l'application, cliquer sur "Visit"
