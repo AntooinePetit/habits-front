@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import TodayHabit from "../components/todayHabit";
+const url = import.meta.env.VITE_URL
 
 export default function Today() {
   const [habits, setHabits] = useState([]);
@@ -17,7 +18,7 @@ export default function Today() {
 
   const getAllHabits = async () => {
     try {
-      const req = await fetch("http://localhost:3000/api/v1/habits/");
+      const req = await fetch(`${url}/api/v1/habits/`);
       if (!req.ok) throw new Error("Erreur de récupération des données");
 
       const res = await req.json();

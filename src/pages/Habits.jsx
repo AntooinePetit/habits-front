@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import AddHabit from "../components/addHabit";
 import HabitElement from "../components/habit";
-import Today from "./Today";
 import { Link } from "react-router-dom";
+const url = import.meta.env.VITE_URL
 
 export default function HabitsPage() {
   document.title = "Suivi global";
@@ -31,13 +31,13 @@ export default function HabitsPage() {
   const deleteHabit = async (id) => {
     try {
       const reqHabit = await fetch(
-        `http://localhost:3000/api/v1/habits/${id}`,
+        `${url}/api/v1/habits/${id}`,
         { method: "DELETE" }
       );
       if (!reqHabit) throw new Error("Erreur de suppression de l'habitude");
 
       const reqEntries = await fetch(
-        `http://localhost:3000/api/v1/entries/habit/${id}`,
+        `${url}/api/v1/entries/habit/${id}`,
         { method: "DELETE" }
       );
       if (!reqEntries) throw new Error("Erreur de suppression des entrées");
@@ -49,7 +49,7 @@ export default function HabitsPage() {
 
   const addHabit = async (name) => {
     try {
-      const req = await fetch("http://localhost:3000/api/v1/habits/", {
+      const req = await fetch(`${url}/api/v1/habits/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name }),

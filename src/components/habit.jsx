@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+const url = import.meta.env.VITE_URL
 
 export default function HabitElement({ id, name, onDelete, setError }) {
   // Récupérer toutes les entrées de l'habitude
@@ -7,7 +8,7 @@ export default function HabitElement({ id, name, onDelete, setError }) {
   // Fetch les entrées de l'habitude
   const fetchEntries = async () => {
     try {
-      const req = await fetch(`http://localhost:3000/api/v1/entries/${id}`);
+      const req = await fetch(`${url}/api/v1/entries/${id}`);
       if (!req.ok) throw new Error("Erreur de récupération des données");
 
       const datas = await req.json();
@@ -24,7 +25,7 @@ export default function HabitElement({ id, name, onDelete, setError }) {
 
   const deleteEntry = async (id) => {
     try {
-      const req = await fetch(`http://localhost:3000/api/v1/entries/${id}`, {
+      const req = await fetch(`${url}/api/v1/entries/${id}`, {
         method: "DELETE",
       });
       if (!req.ok) throw new Error("Impossible de supprimer l'entrée");

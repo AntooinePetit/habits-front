@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+const url = import.meta.env.VITE_URL
 
 export default function TodayHabit({ name, id, date, setError }) {
   const [entries, setEntries] = useState([]);
@@ -6,7 +7,7 @@ export default function TodayHabit({ name, id, date, setError }) {
   const getAllEntriesForToday = async () => {
     try {
       const req = await fetch(
-        `http://localhost:3000/api/v1/entries/${date}/${id}`
+        `${url}/api/v1/entries/${date}/${id}`
       );
       if (!req.ok) throw new Error("Erreur de chargement des entrées");
 
@@ -24,7 +25,7 @@ export default function TodayHabit({ name, id, date, setError }) {
 
   const addEntry = async (id) => {
     try {
-      const req = await fetch(`http://localhost:3000/api/v1/entries/${id}`, {
+      const req = await fetch(`${url}/api/v1/entries/${id}`, {
         method: "POST",
       });
       if (!req) throw new Error("Erreur de l'enregistrement de l'entrée");
@@ -38,7 +39,7 @@ export default function TodayHabit({ name, id, date, setError }) {
 
   const deleteEntry = async (id) => {
     try {
-      const req = await fetch(`http://localhost:3000/api/v1/entries/${id}`, {
+      const req = await fetch(`${url}/api/v1/entries/${id}`, {
         method: "DELETE",
       });
       if (!req.ok) throw new Error("Impossible de supprimer l'entrée");
