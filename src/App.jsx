@@ -1,6 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import HabitsPage from "./pages/habits";
 import Today from "./pages/Today";
+import HabitsPage from "./pages/Habits";
 
 export default function App() {
   return (

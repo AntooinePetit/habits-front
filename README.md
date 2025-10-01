@@ -1,12 +1,82 @@
-# React + Vite
+# Gestionnaire d'habitude
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-19.1.1-61DAFB)
+![Vite](https://img.shields.io/badge/Vite-7.1.7-646CFF)
+![npm](https://img.shields.io/badge/npm-v11.6.0-blue)
 
-Currently, two official plugins are available:
+## 📝 Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Cette application web permet d'enregistrer des habitudes à suivre quotidiennement, noter à quelle heure et quel jour elles ont été réalisées et d'en garder un suivi en ligne.
 
-## Expanding the ESLint configuration
+## 🛠️ Stack technique
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://react.dev/) (créé avec [Vite](https://vitejs.dev/))
+- [Fetch](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/) pour les appels API
+
+## 📂 Structure du projet
+
+```bash
+front/
+├── src/
+│   ├── components/   # Composants réutilisables
+│   ├── pages/        # Pages de l'application
+│   ├── App.jsx
+│   └── main.jsx
+├── package.json
+└── README.md
+```
+
+## ⚙️ Installation
+
+### Prérequis
+
+- npm
+
+### 1. Cloner le repository 
+
+```bash
+git clone --recurse-submodules https://github.com/AntooinePetit/habits
+cd habits/front
+```
+
+### 2. Installer les dépendances
+
+```bash
+npm install
+```
+
+### 3. Lancer le projet
+
+```bash
+npm run dev
+```
+
+L'application sera disponible sur `http://localhost:5173/`
+
+## 📊 Fonctionnalités principales
+
+- Page d'accueil :
+  - Ajout d'habitude
+  - Suivi de toutes les entrées de toutes les habitudes
+  - Suppression d'entrée passée
+  - Suppression d'habitude
+- Page de suivi du jour :
+  - Ajout d'entrée
+  - Suppression d'entrée du jour
+
+## 🎨 Composants développés
+
+- `addHabit` : Section d'ajout d'habitude
+- `habit` : Affichage d'une habitude et de ses entrées
+- `todayHabit` : Affichage d'une habitude et de l'entrée du jour
+- `Habits` : Affichage des habitudes globales
+- `Today` : Affichage des habitudes pour la journée
+
+## 🚀 Déploiement
+
+- Se rendre sur [Vercel](https://vercel.com/)
+- Créer un compte/Se connecter avec GitHub
+- Cliquer sur "Add New" > "Project"
+- Sélectionner le repository correspondant 
+- Nommer le projet si besoin
+- Cliquer sur "Deploy"
