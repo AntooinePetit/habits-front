@@ -80,12 +80,8 @@ L'application sera disponible sur `http://localhost:5173/`
 - Cliquer sur "Fork"
 - Nommer le fork
 - Cliquer sur "Create fork"
-- Après [déploiement du back](https://github.com/AntooinePetit/habits-back?tab=readme-ov-file), remplacer `http://localhost:3000` par le lien d'accès à votre back dans les fetch présents ici :
-  - `src/components/habit.jsx` : lignes 10, 27
-  - `src/components/todayHabit.jsx` : lignes 9, 27, 41
-  - `src/pages/Habits.jsx` : lignes 17, 34, 40, 52
-  - `src/pages/Today.jsx` : ligne 20
-- Push le projet avec les liens **Fetch** à jour
+- Après [déploiement du back](https://github.com/AntooinePetit/habits-back?tab=readme-ov-file), dans `.env`, remplacer le lien local par le lien d'accès à votre back (lien du site déployé). :warning: Attention à ne PAS mettre de `/` à la fin de votre lien d'accès ! :warning:
+- Push le fork mis à jour
 
 ### Déploiement sur Vercel
 
