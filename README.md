@@ -80,7 +80,6 @@ L'application sera disponible sur `http://localhost:5173/`
 - Cliquer sur "Fork"
 - Nommer le fork
 - Cliquer sur "Create fork"
-- Après [déploiement du back](https://github.com/AntooinePetit/habits-back?tab=readme-ov-file), dans `.env`, remplacer le lien local par le lien d'accès à votre back (lien du site déployé). :warning: Attention à ne PAS mettre de `/` à la fin de votre lien d'accès ! :warning:
 - Push le fork mis à jour
 
 ### Déploiement sur Vercel
@@ -92,4 +91,5 @@ L'application sera disponible sur `http://localhost:5173/`
 - Nommer le projet si besoin
 - Cliquer sur "Deploy"
 - Cliquer sur "Continue to Dashboard"
+- Rendez-vous sur "Environment Variables", remplacer le lien local par le lien d'accès à votre back (lien du site déployé). :warning: Attention à ne PAS mettre de `/` à la fin de votre lien d'accès ! :warning:
 - Pour accéder à l'application, cliquer sur "Visit"
