@@ -80,7 +80,6 @@ L'application sera disponible sur `http://localhost:5173/`
 - Cliquer sur "Fork"
 - Nommer le fork
 - Cliquer sur "Create fork"
-- Push le fork mis à jour
 
 ### Déploiement sur Vercel
 
